@@ -19,7 +19,7 @@ switch (i) {
     case 1:
         console.log("I is one");
         break;
-    case 2: dbsfdn gfh bdkngfhg
+    case 2:
         console.log("I is two");
         break;
     case 3:
