@@ -16,6 +16,18 @@ const area = function (x, y) {
 
 let rectangleArea = area(7, 9)
 
+//OR
+
+//function area (l1, l2){
+// let rectangleArea = l1 * l2
+// return rectangleArea
+//}
+
+//OR
+//function area (l1, ;2){
+//  return l1 * l2
+//}
+
 /* EXERCISE 2
 Write a function "crazySum" which receives two given integers. If the two values are same, then returns triple their sum.
 */
@@ -28,6 +40,13 @@ const crazySum = function (x1, x2) {
     }
 }
 console.log(crazySum(5, 5))
+
+//OR
+
+//function crazySum(n1, n2) {
+//   return n1 === n2 ? (n1 + n2) * (n1 + n2)
+//}
+
 
 /* EXERCISE 3
 Write a function "crazyDiff" that computes the
@@ -46,6 +65,19 @@ const crazyDiff1 = function (a) {
 }
 console.log(crazyDiff1(39))
 
+/*OR
+function crazyDiff(t) {
+let difference = t - 19
+  //  if (difference < 0) {
+    difference = -difference
+    }
+    if (t > 19) {
+        difference = difference * 3
+    }
+    return difference
+}
+console.log(crazyDiff(5));
+*/
 /* EXERCISE 4
 Write a function "boundary" which accept an integer N and returns true if N is within 20 and 100 (included) or equal to 400.
 */
@@ -54,12 +86,12 @@ const boundary = function (n) {
 }
 console.log(boundary(500));
 
+
 /* WRITE YOUR CODE HERE */
 
 /* EXERCISE 5
 Write a function "strivify" which accepts a string S. Add to S "Strive" in front of a given string, if the given string begins with "Strive" then return the original string.
 */
-// team works answer, i dont agree....
 const strivify = function (passedString) {
 
     // const result = `Strive${passedString}`
@@ -73,6 +105,17 @@ const strivify = function (passedString) {
 }
 console.log(strivify("Strive"));
 
+
+//OR
+/* function strivify(S) {
+    if (S === "Strive") {
+        return S
+    } else {
+        return "Strive" + S;
+    }
+}
+console.log(strivify("cat"));
+*/
 
 /* WRITE YOUR CODE HERE */
 
@@ -89,25 +132,49 @@ const check3and7 = function (num) {
 }
 
 console.log(check3and7(22))
+
+//OR
+/* const check3and7 = function (num) {
+    console.log(
+        num % 7 === 0 || num % 3 === 0
+            ? "it's a multiple of 3 or 7" :
+            "it's not a multiple of 3 or 7")
+}
+console.log(check3and7(14))
+*/
 /* WRITE YOUR CODE HERE */
 
 /* EXERCISE 7
 Write a function "reverseString" to reverse programmatically a given string (es.: Strive => evirtS).
 */
+function reservseString(word) {
+    return word.split(" ").reverse().join(" ");
+}
 
 /* WRITE YOUR CODE HERE */
 
 /* EXERCISE 8
-Write a function "upperFirst" to capitalize the first letter of each word of a given string passed as parameter
+Write a function "upperFirst" to capitalize the first letter of each word of a given string passed as parameter */
 
-const upperFirst = function
-    console.log('Hello'.toUpperCase()); */
+function upperFirst(sentence) {
+    let arrayOfWords = sentence.split(" ")
+    for (let i = 0; i < arrayOfWords.length; i++) {
+        let firstLetter = arrayOfWords[i].charAt(0).toUpperCase() //.charAt is recalled the letter in that position, which we put 0 for this
+        arrayOfWords[i] = firstLetter + arrayOfWords[i].substr(1)
+    }
+    return arrayOfWords.join(" ")
+}
+
+console.log(upperFirst("cat dog"));
 /* WRITE YOUR CODE HERE */
 
 /* EXERCISE 9
 Write a function "cutString" to create a new string without the first and last character of a given string.
 */
-
+function cutString(str) {
+    return str.substr(1).slice(0, str.length - 2)
+}
+console.log(cutString("hello"));
 /* WRITE YOUR CODE HERE */
 
 /* EXERCISE 10
@@ -122,6 +189,16 @@ const giveMeRandom0 = (n) => {
     return arrayN;
 };
 console.log(giveMeRandom0(6));
+
+//OR
+function giveMeRandom(n) {
+    let array = []
+    for (let x = 0; x < n; x++) {
+        array.push(Math.floor(Math.random() * 11));
+    }
+    return array;
+}
+console.log(giveMeRandom(6));
 
 /* WRITE YOUR CODE HERE */
 
